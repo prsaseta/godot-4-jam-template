@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://sk4f7pohkxe6"]
+
+[ext_resource type="Script" path="res://Globals/g_config.gd" id="1_aa2ix"]
+
+[node name="GConfig" type="Node"]
+process_mode = 3
+script = ExtResource("1_aa2ix")

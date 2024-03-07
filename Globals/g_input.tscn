@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbu16lq8qraaf"]
+
+[ext_resource type="Script" path="res://Globals/g_input.gd" id="1_6eib0"]
+
+[node name="GInput" type="Node"]
+process_mode = 3
+script = ExtResource("1_6eib0")

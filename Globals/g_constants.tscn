@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://wr37f50mc85x"]
+
+[ext_resource type="Script" path="res://Globals/g_constants.gd" id="1_inkeh"]
+
+[node name="GConstants" type="Node"]
+script = ExtResource("1_inkeh")

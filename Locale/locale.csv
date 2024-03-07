@@ -1,0 +1,38 @@
+key,es,en
+,,
+OPTIONS_TITLE,"Opciones","Options"
+OPTIONS_FULLSCREEN,"Pantalla completa","Fullscreen"
+OPTIONS_FULLSCREEN_HINT,"El juego ocupa la pantalla completa","The game occupies the whole screen"
+OPTIONS_RESOLUTION,"Resolución","Resolution"
+OPTIONS_RESOLUTION_HINT,"Resolución de pantalla","Screen resolution"
+OPTIONS_LOCALE,"Lenguaje","Language"
+OPTIONS_LOCALE_HINT,"Lenguaje del juego","Game language"
+OPTIONS_MUSIC,"Volumen de música","Music volume"
+OPTIONS_MUSIC_HINT,"Porcentaje de volumen al que se reproducirá la música","Percentage of volume music will be played at"
+OPTIONS_SFX,"Volumen de efectos","SFX volume"
+OPTIONS_SFX_HINT,"Porcentaje de volumen al que se reproducirán los efectos de sonido","Percentage of volume sound effects will be played at"
+OPTIONS_SENSITIVITY,"Sensibilidad del ratón","Mouse sensitivity"
+OPTIONS_SENSITIVITY_HINT,"Cómo de rápido se mueve la cámara al girar el ratón","How quickly the camera turns when moving your mouse"
+OPTIONS_APPLY,"Aplicar cambios","Apply changes"
+OPTIONS_CANCEL,"Volver","Back"
+,,
+PAUSE_PAUSE,"Pausa","Pause"
+PAUSE_CONTINUE,"Reanudar","Resume"
+PAUSE_OPTIONS,"Opciones","Settings"
+PAUSE_EXIT_MENU,"Salir al menú","Quit to menu"
+PAUSE_EXIT_DESKTOP,"Salir al escritorio","Quit to desktop"
+,,
+MAIN_MENU_START,"Jugar","Play"
+MAIN_MENU_OPTIONS,"Opciones","Options"
+MAIN_MENU_CREDITS,"Créditos","Credits"
+MAIN_MENU_PROFILE,"Elegir perfil","Choose profile"
+MAIN_MENU_QUIT,"Salir","Quit"
+,,
+CREDITS_BACK,"Volver","Back"
+,,
+PROFILE_LIST_LOAD,"Elegir perfil","Choose profile"
+PROFILE_LIST_LINE_IN_USE,"Perfil en uso","Active profile"
+PROFILE_LIST_BACK,"Atrás","Back"
+PROFILE_LIST_NEW,"Nuevo perfil","New profile"
+PROFILE_LIST_CREATE_NEW,"Crear perfil","Create profile"
+PROFILE_LIST_DEFAULT_NAME,"Jugador","Player"

@@ -1,0 +1,118 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqp0i0pbod6o1"]
+
+[ext_resource type="Theme" uid="uid://bs8ohtjd127lh" path="res://Themes/standard_ui_theme.tres" id="1_as3cl"]
+[ext_resource type="PackedScene" uid="uid://smpnqawbajbp" path="res://UI/OptionsMenu/options_menu.tscn" id="1_h3we1"]
+[ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_t5nwi"]
+[ext_resource type="PackedScene" uid="uid://dveo7mva6wx2g" path="res://UI/ProfileMenu/profile_menu.tscn" id="4_8xnyt"]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_t5nwi")
+
+[node name="ButtonsCL" type="CanvasLayer" parent="."]
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="ButtonsCL"]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_as3cl")
+
+[node name="TitleLabel" type="Label" parent="ButtonsCL/ButtonsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 128
+text = "YOUR VERY COOL GAME"
+horizontal_alignment = 1
+
+[node name="StartGameButton" type="Button" parent="ButtonsCL/ButtonsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "MAIN_MENU_START"
+
+[node name="ProfileButton" type="Button" parent="ButtonsCL/ButtonsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "MAIN_MENU_PROFILE"
+
+[node name="OptionsButton" type="Button" parent="ButtonsCL/ButtonsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "MAIN_MENU_OPTIONS"
+
+[node name="CreditsButton" type="Button" parent="ButtonsCL/ButtonsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "MAIN_MENU_CREDITS"
+
+[node name="QuitButton" type="Button" parent="ButtonsCL/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "MAIN_MENU_QUIT"
+
+[node name="OptionsCL" type="CanvasLayer" parent="."]
+
+[node name="OptionsMenu" parent="OptionsCL" instance=ExtResource("1_h3we1")]
+unique_name_in_owner = true
+visible = false
+
+[node name="ProfileCL" type="CanvasLayer" parent="."]
+
+[node name="ProfileMenu" parent="ProfileCL" instance=ExtResource("4_8xnyt")]
+unique_name_in_owner = true
+visible = false
+
+[node name="CreditsCL" type="CanvasLayer" parent="."]
+
+[node name="CreditsVBC" type="VBoxContainer" parent="CreditsCL"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_as3cl")
+
+[node name="Label" type="Label" parent="CreditsCL/CreditsVBC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "HECHO POR UNOS DESARROLLADORES GUAPÍSIMOS <3"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CreditsCL/CreditsVBC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Ayuda adicional de PRSaseta"
+horizontal_alignment = 1
+
+[node name="CreditsBackButton" type="Button" parent="CreditsCL/CreditsVBC"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "CREDITS_BACK"
+
+[connection signal="pressed" from="ButtonsCL/ButtonsContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="ButtonsCL/ButtonsContainer/ProfileButton" to="." method="_on_profile_button_pressed"]
+[connection signal="pressed" from="ButtonsCL/ButtonsContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="ButtonsCL/ButtonsContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="ButtonsCL/ButtonsContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="cancel_button_pressed" from="OptionsCL/OptionsMenu" to="." method="_on_options_menu_cancel_button_pressed"]
+[connection signal="visibility_changed" from="ProfileCL/ProfileMenu" to="." method="_on_profile_menu_visibility_changed"]
+[connection signal="pressed" from="CreditsCL/CreditsVBC/CreditsBackButton" to="." method="_on_credits_back_button_pressed"]

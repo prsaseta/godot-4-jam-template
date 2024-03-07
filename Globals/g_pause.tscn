@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmqf2nswhw08e"]
+
+[ext_resource type="Script" path="res://Globals/g_pause.gd" id="1_uquox"]
+
+[node name="GPause" type="Node"]
+script = ExtResource("1_uquox")

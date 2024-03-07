@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgyweag4wt74b"]
+
+[ext_resource type="Script" path="res://Globals/g_profile.gd" id="1_a34el"]
+
+[node name="GProfile" type="Node"]
+process_mode = 3
+script = ExtResource("1_a34el")

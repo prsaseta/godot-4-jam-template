@@ -1,0 +1,6 @@
+Este template está hecho por Pablo Rodríguez Saseta (https://prsas.itch.io/ , rodriguezsaseta at gmail dot com)
+Eres libre de usarlo para proyectos gratuitos o comerciales. La atribución es opcional pero agradecida.
+
+# Assets externos
+
+NotoSans: https://fonts.google.com/noto/specimen/Noto+Sans

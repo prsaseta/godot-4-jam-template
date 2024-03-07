@@ -1,0 +1,89 @@
+[gd_scene load_steps=4 format=3 uid="uid://dveo7mva6wx2g"]
+
+[ext_resource type="Theme" uid="uid://bs8ohtjd127lh" path="res://Themes/standard_ui_theme.tres" id="1_gh2bg"]
+[ext_resource type="Script" path="res://UI/ProfileMenu/profile_menu.gd" id="2_bgjpe"]
+[ext_resource type="FontFile" uid="uid://cyhdrk3dknfm7" path="res://Fonts/NotoSans-Regular.ttf" id="3_poeqt"]
+
+[node name="ProfileMenu" type="MarginContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_gh2bg")
+script = ExtResource("2_bgjpe")
+
+[node name="LoadListPC" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBC" type="VBoxContainer" parent="LoadListPC"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LoadListPC/VBC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "PROFILE_LIST_LOAD"
+horizontal_alignment = 1
+
+[node name="SC" type="ScrollContainer" parent="LoadListPC/VBC"]
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 2
+
+[node name="LoadLinesParent" type="VBoxContainer" parent="LoadListPC/VBC/SC"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BackButton" type="Button" parent="LoadListPC/VBC"]
+layout_mode = 2
+text = "PROFILE_LIST_BACK"
+
+[node name="NewProfileButton" type="Button" parent="LoadListPC/VBC"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "PROFILE_LIST_NEW"
+
+[node name="NewProfilePC" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="VBC" type="VBoxContainer" parent="NewProfilePC"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NewProfilePC/VBC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "PROFILE_LIST_NEW"
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="NewProfilePC/VBC"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_poeqt")
+theme_override_font_sizes/font_size = 32
+alignment = 1
+max_length = 140
+context_menu_enabled = false
+
+[node name="NewProfileAcceptButton" type="Button" parent="NewProfilePC/VBC"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "PROFILE_LIST_CREATE_NEW"
+
+[node name="NewProfileBackButton" type="Button" parent="NewProfilePC/VBC"]
+layout_mode = 2
+text = "PROFILE_LIST_BACK"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="LoadListPC/VBC/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="LoadListPC/VBC/NewProfileButton" to="." method="_on_new_profile_button_pressed"]
+[connection signal="pressed" from="NewProfilePC/VBC/NewProfileAcceptButton" to="." method="_on_new_profile_accept_button_pressed"]
+[connection signal="pressed" from="NewProfilePC/VBC/NewProfileBackButton" to="." method="_on_new_profile_back_button_pressed"]

@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4i22ikq13m5h"]
+
+[ext_resource type="Theme" uid="uid://bs8ohtjd127lh" path="res://Themes/standard_ui_theme.tres" id="1_uqd2h"]
+[ext_resource type="Script" path="res://UI/ProfileMenu/profile_load_line.gd" id="2_27eg1"]
+
+[node name="ProfileLoadLine" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+theme = ExtResource("1_uqd2h")
+script = ExtResource("2_27eg1")
+
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBC" type="VBoxContainer" parent="MC"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="MC/VBC"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "LAURITA"
+
+[node name="InUseLabel" type="Label" parent="MC/VBC"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "PROFILE_LIST_LINE_IN_USE"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

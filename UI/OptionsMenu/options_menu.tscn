@@ -1,0 +1,147 @@
+[gd_scene load_steps=3 format=3 uid="uid://smpnqawbajbp"]
+
+[ext_resource type="Script" path="res://UI/OptionsMenu/options_menu.gd" id="2_8kvy1"]
+[ext_resource type="Theme" uid="uid://bs8ohtjd127lh" path="res://Themes/standard_ui_theme.tres" id="2_ulysk"]
+
+[node name="OptionsMenu" type="PanelContainer"]
+clip_contents = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.5
+offset_top = -200.0
+offset_right = 105.5
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ulysk")
+script = ExtResource("2_8kvy1")
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBC" type="VBoxContainer" parent="MC"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="MC/VBC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "OPTIONS_TITLE"
+horizontal_alignment = 1
+
+[node name="SettingsSC" type="ScrollContainer" parent="MC/VBC"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="SettingsVBC" type="VBoxContainer" parent="MC/VBC/SettingsSC"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="FullscreenHBC" type="HBoxContainer" parent="MC/VBC/SettingsSC/SettingsVBC"]
+layout_mode = 2
+tooltip_text = "OPTIONS_FULLSCREEN_HINT"
+
+[node name="Label" type="Label" parent="MC/VBC/SettingsSC/SettingsVBC/FullscreenHBC"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "OPTIONS_FULLSCREEN"
+
+[node name="FullscreenCB" type="CheckBox" parent="MC/VBC/SettingsSC/SettingsVBC/FullscreenHBC"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ResolutionHBC" type="HBoxContainer" parent="MC/VBC/SettingsSC/SettingsVBC"]
+layout_mode = 2
+tooltip_text = "OPTIONS_RESOLUTION_HINT"
+
+[node name="Label" type="Label" parent="MC/VBC/SettingsSC/SettingsVBC/ResolutionHBC"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "OPTIONS_RESOLUTION"
+
+[node name="ResolutionOB" type="OptionButton" parent="MC/VBC/SettingsSC/SettingsVBC/ResolutionHBC"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="MC/VBC/SettingsSC/SettingsVBC"]
+layout_mode = 2
+
+[node name="LocaleHBC" type="HBoxContainer" parent="MC/VBC/SettingsSC/SettingsVBC"]
+layout_mode = 2
+tooltip_text = "OPTIONS_LOCALE_HINT"
+
+[node name="Label" type="Label" parent="MC/VBC/SettingsSC/SettingsVBC/LocaleHBC"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "OPTIONS_LOCALE"
+
+[node name="LocaleOB" type="OptionButton" parent="MC/VBC/SettingsSC/SettingsVBC/LocaleHBC"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator3" type="HSeparator" parent="MC/VBC/SettingsSC/SettingsVBC"]
+layout_mode = 2
+
+[node name="MusicHBC" type="HBoxContainer" parent="MC/VBC/SettingsSC/SettingsVBC"]
+layout_mode = 2
+tooltip_text = "OPTIONS_MUSIC_HINT"
+
+[node name="Label" type="Label" parent="MC/VBC/SettingsSC/SettingsVBC/MusicHBC"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "OPTIONS_MUSIC"
+
+[node name="MusicHS" type="HSlider" parent="MC/VBC/SettingsSC/SettingsVBC/MusicHBC"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="MusicLabel" type="Label" parent="MC/VBC/SettingsSC/SettingsVBC/MusicHBC"]
+layout_mode = 2
+text = "100%"
+
+[node name="SFXHBC" type="HBoxContainer" parent="MC/VBC/SettingsSC/SettingsVBC"]
+layout_mode = 2
+tooltip_text = "OPTIONS_SFX_HINT"
+
+[node name="Label" type="Label" parent="MC/VBC/SettingsSC/SettingsVBC/SFXHBC"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "OPTIONS_SFX"
+
+[node name="SFXHS" type="HSlider" parent="MC/VBC/SettingsSC/SettingsVBC/SFXHBC"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="SFXLabel" type="Label" parent="MC/VBC/SettingsSC/SettingsVBC/SFXHBC"]
+layout_mode = 2
+text = "100%"
+
+[node name="ApplyButton" type="Button" parent="MC/VBC"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = "OPTIONS_APPLY"
+
+[node name="CancelButton" type="Button" parent="MC/VBC"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = "OPTIONS_CANCEL"
+
+[connection signal="visibility_changed" from="." to="." method="_on_OptionsMenu_visibility_changed"]
+[connection signal="value_changed" from="MC/VBC/SettingsSC/SettingsVBC/MusicHBC/MusicHS" to="." method="_on_music_hs_value_changed"]
+[connection signal="value_changed" from="MC/VBC/SettingsSC/SettingsVBC/SFXHBC/SFXHS" to="." method="_on_sfxhs_value_changed"]
+[connection signal="pressed" from="MC/VBC/ApplyButton" to="." method="_on_apply_button_pressed"]
+[connection signal="pressed" from="MC/VBC/CancelButton" to="." method="_on_cancel_button_pressed"]

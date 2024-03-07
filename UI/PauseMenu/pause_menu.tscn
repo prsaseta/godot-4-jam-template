@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl4gasbqnjy2s"]
+
+[ext_resource type="Theme" uid="uid://bs8ohtjd127lh" path="res://Themes/standard_ui_theme.tres" id="1_kqcmt"]
+[ext_resource type="Script" path="res://UI/PauseMenu/pause_menu.gd" id="2_kj1vr"]
+[ext_resource type="PackedScene" uid="uid://smpnqawbajbp" path="res://UI/OptionsMenu/options_menu.tscn" id="3_fmmu6"]
+
+[node name="PauseMenu" type="MarginContainer"]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_kqcmt")
+script = ExtResource("2_kj1vr")
+
+[node name="ButtonsPC" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBC" type="VBoxContainer" parent="ButtonsPC"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ButtonsPC/VBC"]
+layout_mode = 2
+text = "PAUSE_PAUSE"
+horizontal_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="ButtonsPC/VBC"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "PAUSE_CONTINUE"
+
+[node name="OptionsButton" type="Button" parent="ButtonsPC/VBC"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "PAUSE_OPTIONS"
+
+[node name="ToMenuButton" type="Button" parent="ButtonsPC/VBC"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "PAUSE_EXIT_MENU"
+
+[node name="QuitButton" type="Button" parent="ButtonsPC/VBC"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "PAUSE_EXIT_DESKTOP"
+
+[node name="OptionsMenu" parent="." instance=ExtResource("3_fmmu6")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="ButtonsPC/VBC/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="ButtonsPC/VBC/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="ButtonsPC/VBC/ToMenuButton" to="." method="_on_to_menu_button_pressed"]
+[connection signal="pressed" from="ButtonsPC/VBC/QuitButton" to="." method="_on_quit_button_pressed"]
